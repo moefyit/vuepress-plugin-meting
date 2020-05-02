@@ -28,10 +28,7 @@ export default {
 
   data() {
     return {
-      auto: METING_AUTO,
-      server: METING_SERVER,
-      type: METING_TYPE,
-      mid: METING_ID,
+      ...METING_OPTIONS,
       ...APLAYER_OPTIONS,
     };
   },

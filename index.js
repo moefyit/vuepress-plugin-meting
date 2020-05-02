@@ -29,10 +29,12 @@ module.exports = (options = {}, context) => ({
 
     return {
       METING_API: metingApi || "https://api.i-meto.com/meting/api",
-      METING_AUTO: auto || "",
-      METING_SERVER: server,
-      METING_TYPE: type,
-      METING_ID: mid,
+      METING_OPTIONS: {
+        auto: auto || "",
+        server: server || "",
+        type: type || "",
+        mid: mid || ""
+      },
       APLAYER_OPTIONS: {
         mini: mini || null,
         autoplay: autoplay || false,
