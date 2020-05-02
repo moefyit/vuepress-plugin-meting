@@ -65,7 +65,7 @@ Options 分为 `metingApi`、`meting`、`aplayer` 三部分
    - 描述：MetingApi 中的 `type` 参数，即资源类型（播放列表、单曲、专辑等）
    - 可选值： `"song" | "album" | "artist" | "playlist"`
 
-- id
+- mid
    - 类型：`string`
    - 默认值： `undefined`
    - 描述：MetingApi 中的 `id` 参数，即资源 ID
@@ -75,13 +75,13 @@ Options 分为 `metingApi`、`meting`、`aplayer` 三部分
    - 默认值：`""`
    - 描述：资源 `url`，填写后可通过资源 `url` 自动解析资源平台、类型、ID，上述三个选项将被覆盖
 
-该 Option 可分别填写 `server`、`type`、`id`
+该 Option 可分别填写 `server`、`type`、`mid`
 
 ``` javascript
 meting: {
   server: "netease",
   type: "playlist",
-  id: "2539599584",
+  mid: "2539599584",
 }
 ```
 
@@ -95,7 +95,7 @@ meting: {
 
 ### aplayer
 
-> 详情见 [Options](https://aplayer.moefe.org/docs/options/)
+> 详情见 [vue-aplayer 文档](https://aplayer.moefe.org/docs/options/)
 
 - fixed
    - 类型：`boolean`
@@ -181,7 +181,7 @@ module.exports = {
       meting: {
         server: "netease",
         type: "playlist",
-        id: "2539599584",
+        mid: "2539599584",
       },          // 不配置该项的话不会出现全局播放器
       aplayer: {
         lrcType: 3
@@ -196,7 +196,7 @@ module.exports = {
 
 <Meting server="netease"
         type="playlist"
-        id="2539599584"
+        mid="2539599584"
         :lrc-type="3"/>
 
 <!-- 这样就可以在 about.html 页面单独引入一个播放器咯～ -->

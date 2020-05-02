@@ -15,29 +15,32 @@
     :list-folded="listFolded"
     :list-max-height="listMaxHeight"
     :storage-name="storageName"
-    />
+  />
 </template>
 
 <script>
-import APlayer from '@moefe/vue-aplayer';
 
 export default {
   name: "Meting",
   props: {
     auto: {
       required: false,
+      type: String,
       default: ""
     },
     server: {
       required: false,
+      type: String,
       default: ""
     },
     type: {
       required: false,
+      type: String,
       default: ""
     },
-    id: {
+    mid: {
       required: false,
+      type: String,
       default: ""
     },
     fixed: {
@@ -62,17 +65,17 @@ export default {
     },
     loop: {
       required: false,
-      type: APlayer.LoopMode,
+      type: String,
       default: "all"
     },
     order: {
       required: false,
-      type: APlayer.OrderMode,
+      type: String,
       default: "list"
     },
     preload: {
       required: false,
-      type: APlayer.Preload,
+      type: String,
       default: "auto"
     },
     volume: {
@@ -82,7 +85,8 @@ export default {
     },
     customAudioType: {
       required: false,
-      type: Object
+      type: Object,
+      default: undefined
     },
     mutex: {
       required: false,
@@ -91,7 +95,7 @@ export default {
     },
     lrcType: {
       required: false,
-      type: APlayer.LrcType,
+      type: Number,
       default: 0
     },
     listFolded: {
@@ -123,7 +127,7 @@ export default {
     const params = {
       server: this.server,
       type: this.type,
-      id: this.id,
+      id: this.mid,
       r: Math.random(),
     };
 
@@ -168,7 +172,7 @@ export default {
         if (res !== null) {
           this.server = rule[1];
           this.type = rule[2];
-          this.id = res[1];
+          this.mid = res[1];
           return;
         }
       }

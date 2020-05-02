@@ -8,7 +8,7 @@ module.exports = (options = {}, context) => ({
         auto,
         server,
         type,
-        id,
+        mid,
       },
       aplayer: {
         mini,
@@ -32,7 +32,7 @@ module.exports = (options = {}, context) => ({
       METING_AUTO: auto || "",
       METING_SERVER: server,
       METING_TYPE: type,
-      METING_ID: id,
+      METING_ID: mid,
       APLAYER_OPTIONS: {
         mini: mini || null,
         autoplay: autoplay || false,

@@ -3,7 +3,7 @@
     :auto="auto"
     :server="server"
     :type="type"
-    :id="id"
+    :mid="mid"
     :fixed="true"
     :mini="mini"
     :autoplay="autoplay"
@@ -17,7 +17,7 @@
     :list-folded="listFolded"
     :list-max-height="listMaxHeight"
     :storage-name="storageName"
-    />
+  />
 </template>
 
 <script>
@@ -31,7 +31,7 @@ export default {
       auto: METING_AUTO,
       server: METING_SERVER,
       type: METING_TYPE,
-      id: METING_ID,
+      mid: METING_ID,
       ...APLAYER_OPTIONS,
     };
   },
