@@ -1,0 +1,40 @@
+{
+  "name": "vuepress-plugin-meting",
+  "version": "0.0.2",
+  "description": "A powerful plugin connect APlayer, Meting and VuePress",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SigureMo/vuepress-plugin-meting.git"
+  },
+  "keywords": [
+    "vuepress",
+    "plugin",
+    "meting",
+    "aplayer"
+  ],
+  "files": [
+    "index.js",
+    "bin/",
+    "package.json",
+    "README.md"
+  ],
+  "author": "SigureMo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SigureMo/vuepress-plugin-meting/issues"
+  },
+  "homepage": "https://github.com/SigureMo/vuepress-plugin-meting#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .js,.vue ./",
+    "lint:create": "eslint --init"
+  },
+  "dependencies": {
+    "@moefe/vue-aplayer": "^2.0.0-beta.5"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^6.2.2"
+  }
+}
