@@ -19,110 +19,109 @@
 </template>
 
 <script>
-
 export default {
   name: "Meting",
   props: {
     auto: {
       required: false,
       type: String,
-      default: ""
+      default: "",
     },
     server: {
       required: false,
       type: String,
-      default: ""
+      default: "",
     },
     type: {
       required: false,
       type: String,
-      default: ""
+      default: "",
     },
     mid: {
       required: false,
       type: String,
-      default: ""
+      default: "",
     },
     fixed: {
       required: false,
       type: Boolean,
-      default: false
+      default: false,
     },
     mini: {
       required: false,
       type: Boolean,
-      default: null
+      default: null,
     },
     autoplay: {
       required: false,
       type: Boolean,
-      default: false
+      default: false,
     },
     theme: {
       required: false,
       type: String,
-      default: "#b7daff"
+      default: "#b7daff",
     },
     loop: {
       required: false,
       type: String,
-      default: "all"
+      default: "all",
     },
     order: {
       required: false,
       type: String,
-      default: "list"
+      default: "list",
     },
     preload: {
       required: false,
       type: String,
-      default: "auto"
+      default: "auto",
     },
     volume: {
       required: false,
       type: Number,
-      default: 0.7
+      default: 0.7,
     },
     customAudioType: {
       required: false,
       type: Object,
-      default: undefined
+      default: undefined,
     },
     mutex: {
       required: false,
       type: Boolean,
-      default: true
+      default: true,
     },
     lrcType: {
       required: false,
       type: Number,
-      default: 0
+      default: 0,
     },
     listFolded: {
       required: false,
       type: Boolean,
-      default: false
+      default: false,
     },
     listMaxHeight: {
       required: false,
       type: Number,
-      default: 250
+      default: 250,
     },
     storageName: {
       required: false,
       type: String,
-      default: "vuepress-plugin-meting"
-    }
+      default: "vuepress-plugin-meting",
+    },
   },
   data() {
     return {
       metingApi: METING_API,
-      audio: []
+      audio: [],
     };
   },
 
   mounted() {
-    if (this.auto) this._parse_link()
+    if (this.auto) this._parse_link();
 
     const params = {
       server: this.server,
@@ -144,7 +143,18 @@ export default {
       },
     })
       .then((res) => res.json())
-      .then((result) => (this.audio = result));
+      .then((result) => {
+        const res = result.map((obj) => {
+          const rObj = {};
+          rObj.name = obj.title;
+          rObj.artist = obj.author;
+          rObj.url = obj.url;
+          rObj.cover = obj.pic;
+          rObj.lrc = obj.lrc;
+          return rObj;
+        });
+        this.audio = res;
+      });
   },
 
   methods: {
