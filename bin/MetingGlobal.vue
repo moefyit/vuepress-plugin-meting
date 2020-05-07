@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import Meting from './Meting.vue';
+import Meting from './Meting.vue'
 
 export default {
   name: "MetingGlobal",
@@ -30,7 +30,7 @@ export default {
     return {
       ...METING_OPTIONS,
       ...APLAYER_OPTIONS,
-    };
+    }
   },
-};
+}
 </script>

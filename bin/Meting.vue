@@ -117,25 +117,25 @@ export default {
     return {
       metingApi: METING_API,
       audio: [],
-    };
+    }
   },
 
   mounted() {
-    if (this.auto) this._parse_link();
+    if (this.auto) this._parse_link()
 
     const params = {
       server: this.server,
       type: this.type,
       id: this.mid,
       r: Math.random(),
-    };
+    }
 
-    let url = this.metingApi;
-    let paramsArray = [];
+    let url = this.metingApi
+    let paramsArray = []
     Object.keys(params).forEach((key) =>
       paramsArray.push(key + "=" + params[key])
-    );
-    url += "?" + paramsArray.join("&");
+    )
+    url += "?" + paramsArray.join("&")
 
     fetch(url, {
       headers: {
@@ -145,16 +145,16 @@ export default {
       .then((res) => res.json())
       .then((result) => {
         const res = result.map((obj) => {
-          const rObj = {};
-          rObj.name = obj.title;
-          rObj.artist = obj.author;
-          rObj.url = obj.url;
-          rObj.cover = obj.pic;
-          rObj.lrc = obj.lrc;
-          return rObj;
-        });
-        this.audio = res;
-      });
+          const rObj = {}
+          rObj.name = obj.title
+          rObj.artist = obj.author
+          rObj.url = obj.url
+          rObj.cover = obj.pic
+          rObj.lrc = obj.lrc
+          return rObj
+        })
+        this.audio = res
+      })
   },
 
   methods: {
@@ -174,19 +174,19 @@ export default {
         ["xiami.com.*album/(\\w+)", "xiami", "album"],
         ["xiami.com.*artist/(\\w+)", "xiami", "artist"],
         ["xiami.com.*collect/(\\w+)", "xiami", "playlist"],
-      ];
+      ]
 
       for (let rule of rules) {
-        let patt = new RegExp(rule[0]);
-        let res = patt.exec(this.auto);
+        let patt = new RegExp(rule[0])
+        let res = patt.exec(this.auto)
         if (res !== null) {
-          this.server = rule[1];
-          this.type = rule[2];
-          this.mid = res[1];
-          return;
+          this.server = rule[1]
+          this.type = rule[2]
+          this.mid = res[1]
+          return
         }
       }
     },
   },
-};
+}
 </script>

@@ -1,4 +1,4 @@
-const { resolve } = require("path");
+const { resolve } = require("path")
 
 module.exports = (options = {}, context) => ({
   define() {
@@ -25,7 +25,7 @@ module.exports = (options = {}, context) => ({
         listMaxHeight,
         storageName
       }
-    } = options;
+    } = options
 
     return {
       METING_API: metingApi || "https://api.i-meto.com/meting/api",
@@ -50,9 +50,9 @@ module.exports = (options = {}, context) => ({
         listMaxHeight: listMaxHeight || 250,
         storageName: storageName || "vuepress-plugin-meting"
       }
-    };
+    }
   },
 
   enhanceAppFiles: resolve(__dirname, "./bin/enhanceAppFile.js"),
   globalUIComponents: options.meting !== undefined ? ["MetingGlobal"] : [],
-});
+})
