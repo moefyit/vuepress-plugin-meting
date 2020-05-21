@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/SigureMo/vuepress-plugin-meting.git"
+    "url": "git+ssh://git@github.com/moefyit/vuepress-plugin-meting.git"
   },
   "keywords": [
     "vuepress",
@@ -22,9 +22,9 @@
   "author": "SigureMo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SigureMo/vuepress-plugin-meting/issues"
+    "url": "https://github.com/moefyit/vuepress-plugin-meting/issues"
   },
-  "homepage": "https://github.com/SigureMo/vuepress-plugin-meting#readme",
+  "homepage": "https://github.com/moefyit/vuepress-plugin-meting#readme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext .js,.vue ./",

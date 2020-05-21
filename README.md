@@ -4,13 +4,19 @@
 
 <p align="center">
    <a href="https://www.npmjs.com/package/vuepress-plugin-meting" target="_blank"><img alt="npm" src="https://img.shields.io/npm/v/vuepress-plugin-meting.svg"></a>
-   <a href="https://github.com/SigureMo/vuepress-plugin-meting/stargazers" target="_blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/SigureMo/vuepress-plugin-meting"></a>
+   <a href="https://github.com/moefyit/vuepress-plugin-meting/stargazers" target="_blank"><img alt="GitHub stars" src="https://img.shields.io/github/stars/moefyit/vuepress-plugin-meting"></a>
    <a href="https://www.npmjs.com/package/vuepress-plugin-meting" target="_blank"><img alt="downloads" src="https://img.shields.io/npm/dt/vuepress-plugin-meting.svg"></a>
    <a href="https://www.npmjs.com/package/vuepress-plugin-meting" target="_blank"><img alt="downloads" src="https://img.shields.io/npm/dm/vuepress-plugin-meting.svg"></a>
-   <a href="https://github.com/SigureMo/vuepress-plugin-meting/blob/master/LICENSE" target="_blank"><img alt="GitHub license" src="https://img.shields.io/github/license/SigureMo/vuepress-plugin-meting"></a>
+   <a href="https://github.com/moefyit/vuepress-plugin-meting/blob/master/LICENSE" target="_blank"><img alt="GitHub license" src="https://img.shields.io/github/license/moefyit/vuepress-plugin-meting"></a>
 </p>
 
-- MyBlog: [www.sigure.xyz](https://www.sigure.xyz/)
+- Document: [meofy-vuepress](https://moefyit.github.io/meofy-vuepress/)
+- LiveDemo: [www.sigure.xyz](https://www.sigure.xyz/)
+
+<Meting server="netease"
+        type="playlist"
+        mid="2539599584"
+        :lrc-type="3"/>
 
 ## Install
 
