@@ -1,6 +1,6 @@
-# vuepress-plugin-meting
+# vuepress-plugin-meting <GitHubLink repo="moefyit/vuepress-plugin-meting"/>
 
-:cake: A powerful plugin connect APlayer, Meting and VuePress
+:cake: A simple plugin connect APlayer, Meting and VuePress.
 
 <p align="center">
    <a href="https://www.npmjs.com/package/vuepress-plugin-meting" target="_blank"><img alt="npm" src="https://img.shields.io/npm/v/vuepress-plugin-meting.svg"></a>

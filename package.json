@@ -1,7 +1,7 @@
 {
   "name": "vuepress-plugin-meting",
   "version": "0.0.4",
-  "description": "A powerful plugin connect APlayer, Meting and VuePress",
+  "description": "A simple plugin connect APlayer, Meting and VuePress",
   "main": "index.js",
   "repository": {
     "type": "git",
