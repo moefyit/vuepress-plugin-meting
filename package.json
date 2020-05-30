@@ -31,7 +31,8 @@
     "lint:create": "eslint --init"
   },
   "dependencies": {
-    "@moefe/vue-aplayer": "^2.0.0-beta.5"
+    "@moefe/vue-aplayer": "^2.0.0-beta.5",
+    "jquery": "^3.5.1"
   },
   "devDependencies": {
     "eslint": "^6.8.0",

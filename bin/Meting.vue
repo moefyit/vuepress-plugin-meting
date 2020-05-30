@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import $ from "jquery"
+
 export default {
   name: "Meting",
   props: {
@@ -121,6 +123,10 @@ export default {
   },
 
   mounted() {
+    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+      this.aplayer_fixed_mobile_switch()
+    }
+
     if (this.auto) this._parse_link()
 
     const params = {
@@ -186,6 +192,30 @@ export default {
           return
         }
       }
+    },
+
+    aplayer_fixed_mobile_switch() {
+      const body = $(".aplayer.aplayer-fixed").children(".aplayer-body")
+      const btn = $(".aplayer.aplayer-fixed").find(".aplayer-miniswitcher")
+
+      const initial_mobile_sty = () => {
+        body.children().hide()
+        body.css("background", "transparent")
+        btn.css("right", "auto").show()
+      }
+      initial_mobile_sty()
+
+      btn.children("button").click(function(event) {
+        const initial_btn = $(".aplayer.aplayer-narrow.aplayer-fixed").find(
+          ".aplayer-miniswitcher"
+        )
+        if (initial_btn.length === 1) {
+          body.children().show()
+          btn.css("right", "0")
+        } else {
+          initial_mobile_sty()
+        }
+      })
     },
   },
 }
