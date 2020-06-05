@@ -121,10 +121,6 @@ export default {
   },
 
   mounted() {
-    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-      this.aplayer_fixed_mobile_switch()
-    }
-
     if (this.auto) this._parse_link()
 
     const params = {
@@ -190,38 +186,7 @@ export default {
           return
         }
       }
-    },
-
-    aplayer_fixed_mobile_switch() {
-      const aplayer = document.getElementById("aplayer-fixed")
-      const body = aplayer.querySelectorAll('.aplayer-body')[0]
-      const btn = aplayer.querySelectorAll('.aplayer-miniswitcher')[0]
-      let isShow = false
-      body.style.background = 'transparent'
-
-      function hide_mini_player() {
-        body.childNodes.forEach((child) => {
-          child.style.display = 'none'
-        })
-        btn.style.display = 'block'
-        btn.style.right = 'auto'
-        isShow = false
-      }
-
-      function show_mini_player() {
-        body.childNodes.forEach((child) => {
-          child.style.display = 'block'
-        })
-        btn.style.right = '0'
-        isShow = true
-      }
-
-      hide_mini_player()
-
-      btn.onclick = () => {
-        isShow ? hide_mini_player() : show_mini_player()
-      }
-    },
+    }
   },
 }
 </script>
