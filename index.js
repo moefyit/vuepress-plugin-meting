@@ -5,7 +5,8 @@ module.exports = (options = {}, context) => ({
     const {
       metingApi = "https://api.i-meto.com/meting/api",
       meting = {},
-      aplayer = {}
+      aplayer = {},
+      mobile = {}
     } = options
 
     const {
@@ -31,6 +32,11 @@ module.exports = (options = {}, context) => ({
       storageName = "vuepress-plugin-meting"
     } = aplayer
 
+    const {
+      cover = true,
+      lrc = true
+    } = mobile
+
     return {
       METING_API: metingApi,
       METING_OPTIONS: {
@@ -53,6 +59,10 @@ module.exports = (options = {}, context) => ({
         listFolded,
         listMaxHeight,
         storageName
+      },
+      MOBILE_OPTIONS: {
+        cover,
+        lrc
       }
     }
   },

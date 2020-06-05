@@ -34,7 +34,8 @@ module.exports = {
     'meting', {
       metingApi,
       meting,
-      aplayer
+      aplayer,
+      mobile
     }
   ]
 }
@@ -45,11 +46,11 @@ module.exports = {
 - `<Meting/>` 组件支持 `meting` Options 和 `aplayer` Options，其中 `aplayer` 的 `audio` 选项将自动通过 metingApi 获取
 - `<APlayer/>` 组件支持 `aplayer` Options，当然，你需要自行提供 `audio` 音乐源
 
-`config.js` 中的 `meting` 选项和 `aplayer` 选项是全局 UI 组件的配置项，当 `meting` 选项被配置后，将自动注册一个全局 UI 组件 `<Meting/>`（吸底模式），这两个配置项不影响其他组件的配置项
+`config.js` 中的 `meting` 选项、`aplayer` 选项和 `mobile` 选项是全局 UI 组件的配置项，当 `meting` 选项被配置后，将自动注册一个全局 UI 组件 `<Meting/>`（吸底模式），这三个配置项不影响其他组件的配置项
 
 ## Options
 
-Options 分为 `metingApi`、`meting`、`aplayer` 三部分
+Options 分为 `metingApi`、`meting`、`aplayer`、`mobile` 四部分
 
 ### metingApi
 
@@ -175,6 +176,20 @@ meting: {
    - 类型：`string`
    - 默认值： `vuepress-plugin-meting`
    - 描述：设置存储播放器设置的 `localStorage` key
+
+### mobile
+
+用于控制全局吸底播放器在移动设备上的一些特殊选项
+
+- cover
+   - 类型：`boolean`
+   - 默认值： `true`
+   - 描述：是否显示封面图，如果隐藏的话可以防止播放器遮挡移动设备上的文字内容
+
+- lrc
+   - 类型：`boolean`
+   - 默认值： `true`
+   - 描述：是否显示歌词
 
 ## Examples
 

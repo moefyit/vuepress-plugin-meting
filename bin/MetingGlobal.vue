@@ -50,23 +50,31 @@ export default {
       let isShow = false
 
       function hide_mini_player() {
-        body.childNodes.forEach((child) => {
-          child.style.display = 'none'
-        })
-        body.style.background = 'transparent'
-        btn.style.display = 'block'
-        btn.style.right = 'auto'
-        lrc.style.display = 'none'
+        if (!MOBILE_OPTIONS.cover) {
+          body.childNodes.forEach((child) => {
+            child.style.display = 'none'
+          })
+          body.style.background = 'transparent'
+          btn.style.display = 'block'
+          btn.style.right = 'auto'
+        }
+        if (!MOBILE_OPTIONS.lrc) {
+          lrc.style.display = 'none'
+        }
         isShow = false
       }
 
       function show_mini_player() {
-        body.childNodes.forEach((child) => {
-          child.style.display = 'block'
-        })
-        body.style.background = 'white'
-        btn.style.right = '0'
-        lrc.style.display = 'block'
+        if (!MOBILE_OPTIONS.cover) {
+          body.childNodes.forEach((child) => {
+            child.style.display = 'block'
+          })
+          body.style.background = 'white'
+          btn.style.right = '0'
+        }
+        if (!MOBILE_OPTIONS.lrc) {
+          lrc.style.display = 'block'
+        }
         isShow = true
       }
 
