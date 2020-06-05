@@ -1,5 +1,6 @@
 <template>
   <Meting
+    id="aplayer-fixed"
     :auto="auto"
     :server="server"
     :type="type"

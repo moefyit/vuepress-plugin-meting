@@ -19,8 +19,6 @@
 </template>
 
 <script>
-import $ from "jquery"
-
 export default {
   name: "Meting",
   props: {
@@ -195,27 +193,34 @@ export default {
     },
 
     aplayer_fixed_mobile_switch() {
-      const body = $(".aplayer.aplayer-fixed").children(".aplayer-body")
-      const btn = $(".aplayer.aplayer-fixed").find(".aplayer-miniswitcher")
+      const aplayer = document.getElementById("aplayer-fixed")
+      const body = aplayer.querySelectorAll('.aplayer-body')[0]
+      const btn = aplayer.querySelectorAll('.aplayer-miniswitcher')[0]
+      let isShow = false
+      body.style.background = 'transparent'
 
-      const initial_mobile_sty = () => {
-        body.children().hide()
-        body.css("background", "transparent")
-        btn.css("right", "auto").show()
+      function hide_mini_player() {
+        body.childNodes.forEach((child) => {
+          child.style.display = 'none'
+        })
+        btn.style.display = 'block'
+        btn.style.right = 'auto'
+        isShow = false
       }
-      initial_mobile_sty()
 
-      btn.children("button").click(function(event) {
-        const initial_btn = $(".aplayer.aplayer-narrow.aplayer-fixed").find(
-          ".aplayer-miniswitcher"
-        )
-        if (initial_btn.length === 1) {
-          body.children().show()
-          btn.css("right", "0")
-        } else {
-          initial_mobile_sty()
-        }
-      })
+      function show_mini_player() {
+        body.childNodes.forEach((child) => {
+          child.style.display = 'block'
+        })
+        btn.style.right = '0'
+        isShow = true
+      }
+
+      hide_mini_player()
+
+      btn.onclick = () => {
+        isShow ? hide_mini_player() : show_mini_player()
+      }
     },
   },
 }
