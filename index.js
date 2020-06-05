@@ -3,14 +3,43 @@ const { resolve } = require("path")
 module.exports = (options = {}, context) => ({
   define() {
     const {
-      metingApi,
-      meting: {
+      metingApi = "https://api.i-meto.com/meting/api",
+      meting = {},
+      aplayer = {}
+    } = options
+
+    const {
+      auto = "",
+      server = "",
+      type = "",
+      mid = ""
+    } = meting
+
+    const {
+      mini = null,
+      autoplay = false,
+      theme = '#b7daff',
+      loop = 'all',
+      order = 'list',
+      preload = 'auto',
+      volume = 0.7,
+      customAudioType,
+      mutex = true,
+      lrcType = 0,
+      listFolded = false,
+      listMaxHeight = 250,
+      storageName = "vuepress-plugin-meting"
+    } = aplayer
+
+    return {
+      METING_API: metingApi,
+      METING_OPTIONS: {
         auto,
         server,
         type,
-        mid,
+        mid
       },
-      aplayer: {
+      APLAYER_OPTIONS: {
         mini,
         autoplay,
         theme,
@@ -25,34 +54,9 @@ module.exports = (options = {}, context) => ({
         listMaxHeight,
         storageName
       }
-    } = options
-
-    return {
-      METING_API: metingApi || "https://api.i-meto.com/meting/api",
-      METING_OPTIONS: {
-        auto: auto || "",
-        server: server || "",
-        type: type || "",
-        mid: mid || ""
-      },
-      APLAYER_OPTIONS: {
-        mini: mini || null,
-        autoplay: autoplay || false,
-        theme: theme || '#b7daff',
-        loop: loop || 'all',
-        order: order || 'list',
-        preload: preload || 'auto',
-        volume: volume || 0.7,
-        customAudioType,
-        mutex: mutex || true,
-        lrcType: lrcType || 0,
-        listFolded: listFolded || false,
-        listMaxHeight: listMaxHeight || 250,
-        storageName: storageName || "vuepress-plugin-meting"
-      }
     }
   },
 
   enhanceAppFiles: resolve(__dirname, "./bin/enhanceAppFile.js"),
-  globalUIComponents: options.meting !== undefined ? ["MetingGlobal"] : [],
+  globalUIComponents: options.meting !== undefined ? ["MetingGlobal"] : undefined,
 })
