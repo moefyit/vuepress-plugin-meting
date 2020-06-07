@@ -10,8 +10,8 @@
    <a href="https://github.com/moefyit/vuepress-plugin-meting/blob/master/LICENSE" target="_blank"><img alt="GitHub license" src="https://img.shields.io/github/license/moefyit/vuepress-plugin-meting"></a>
 </p>
 
-- Document: [meofy-vuepress](https://moefyit.github.io/meofy-vuepress/)
-- LiveDemo: [www.sigure.xyz](https://www.sigure.xyz/)
+- Document: [moefy-vuepress](https://moefyit.github.io/moefy-vuepress/)
+- LiveDemo: [notev](https://www.sigure.xyz/)
 
 <Meting server="netease"
         type="playlist"
