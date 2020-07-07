@@ -44,9 +44,9 @@ export default {
     aplayer_fixed_mobile_switch() {
       const aplayer = document.getElementById("aplayer-fixed")
       if (aplayer === null) return
-      const body = aplayer.querySelectorAll('.aplayer-body')[0]
-      const btn = aplayer.querySelectorAll('.aplayer-miniswitcher')[0]
-      const lrc = aplayer.querySelectorAll('.aplayer-lrc')[0]
+      const body = aplayer.querySelector('.aplayer-body')
+      const btn = aplayer.querySelector('.aplayer-miniswitcher')
+      const lrc = aplayer.querySelector('.aplayer-lrc')
       let isShow = false
 
       function hide_mini_player() {
