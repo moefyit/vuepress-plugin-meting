@@ -1,22 +1,18 @@
-const { resolve } = require("path")
+const { resolve } = require('path')
 
 module.exports = (options = {}, context) => ({
   define() {
     const {
-      metingApi = "https://api.i-meto.com/meting/api",
+      metingApi = 'https://api.i-meto.com/meting/api',
       meting = {},
       aplayer = {},
       mobile = {}
     } = options
 
-    const {
-      auto = "",
-      server = "",
-      type = "",
-      mid = ""
-    } = meting
+    const { auto = '', server = '', type = '', mid = '' } = meting
 
     const {
+      additionAudio = [],
       mini = null,
       autoplay = false,
       theme = '#b7daff',
@@ -29,13 +25,10 @@ module.exports = (options = {}, context) => ({
       lrcType = 0,
       listFolded = false,
       listMaxHeight = 250,
-      storageName = "vuepress-plugin-meting"
+      storageName = 'vuepress-plugin-meting'
     } = aplayer
 
-    const {
-      cover = true,
-      lrc = true
-    } = mobile
+    const { cover = true, lrc = true } = mobile
 
     return {
       METING_API: metingApi,
@@ -46,6 +39,7 @@ module.exports = (options = {}, context) => ({
         mid
       },
       APLAYER_OPTIONS: {
+        additionAudio,
         mini,
         autoplay,
         theme,
@@ -67,6 +61,7 @@ module.exports = (options = {}, context) => ({
     }
   },
 
-  enhanceAppFiles: resolve(__dirname, "./bin/enhanceAppFile.js"),
-  globalUIComponents: options.meting !== undefined ? ["MetingGlobal"] : undefined,
+  enhanceAppFiles: resolve(__dirname, './bin/enhanceAppFile.js'),
+  globalUIComponents:
+    options.meting !== undefined ? ['MetingGlobal'] : undefined
 })
