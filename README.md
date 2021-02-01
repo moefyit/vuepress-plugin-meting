@@ -44,7 +44,7 @@ module.exports = {
 
 使用该插件后将自动注册 `<Meting/>` 组件与 `<APlayer/>` 组件，你可以在任意位置使用它们
 
--  `<Meting/>` 组件支持 `meting` Options 和 `aplayer` Options，其中 `aplayer` 的 `audio` 选项将自动通过 metingApi 获取，如果想要额外添加 `audio` 的话，可以通过 `additionAudio` 选项实现
+-  `<Meting/>` 组件支持 `meting` Options 和 `aplayer` Options，其中 `aplayer` 的 `audio` 选项将自动通过 metingApi 获取，如果想要额外添加 `audio` 的话，可以通过 `additionalAudios` 选项实现
 -  `<APlayer/>` 组件支持 `aplayer` Options，当然，你需要自行提供 `audio` 音乐源
 
 `config.js` 中的 `meting` 选项、`aplayer` 选项和 `mobile` 选项是全局 UI 组件的配置项，当 `meting` 选项被配置后，将自动注册一个全局 UI 组件 `<Meting/>`（吸底模式），这三个配置项不影响其他组件的配置项
@@ -159,9 +159,9 @@ meting: {
    -  默认值： `0.7`
    -  描述：设置播放器的音量
 
--  additionAudio
+-  additionalAudios
 
-   -  类型：`APlayer.Audio | Array<APlayer.Audio>`
+   -  类型：`Array<APlayer.Audio>`
    -  默认值：`[]`
    -  描述：除 Meting 解析的 audio 外额外添加的 audio
       > 详情见 [vue-aplayer 文档的 audio 选项](https://github.com/MoePlayer/vue-aplayer/blob/dev/docs/options/README.md#audio-)，另外，作为 `<APlayer />` 组件使用的时候仍应该使用 audio 选项。

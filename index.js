@@ -12,7 +12,7 @@ module.exports = (options = {}, context) => ({
     const { auto = '', server = '', type = '', mid = '' } = meting
 
     const {
-      additionAudio = [],
+      additionalAudios = [],
       mini = null,
       autoplay = false,
       theme = '#b7daff',
@@ -39,7 +39,7 @@ module.exports = (options = {}, context) => ({
         mid
       },
       APLAYER_OPTIONS: {
-        additionAudio,
+        additionalAudios,
         mini,
         autoplay,
         theme,

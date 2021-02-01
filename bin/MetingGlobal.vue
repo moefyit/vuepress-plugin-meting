@@ -5,7 +5,7 @@
     :server="server"
     :type="type"
     :mid="mid"
-    :addition-audio="additionAudio"
+    :additional-audios="additionalAudios"
     :fixed="true"
     :mini="mini"
     :autoplay="autoplay"

@@ -42,7 +42,7 @@ export default {
       type: String,
       default: ''
     },
-    additionAudio: {
+    additionalAudios: {
       required: false,
       type: Array,
       default: () => []
@@ -158,7 +158,7 @@ export default {
           rObj.lrc = obj.lrc
           return rObj
         })
-        this.audio = res.concat(this.additionAudio)
+        this.audio = res.concat(this.additionalAudios)
       })
   },
 
