@@ -25,16 +25,7 @@
     "url": "https://github.com/moefyit/vuepress-plugin-meting/issues"
   },
   "homepage": "https://github.com/moefyit/vuepress-plugin-meting#readme",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --ext .js,.vue ./",
-    "lint:create": "eslint --init"
-  },
   "dependencies": {
     "@moefe/vue-aplayer": "^2.0.0-beta.5"
-  },
-  "devDependencies": {
-    "eslint": "^7.10.0",
-    "eslint-plugin-vue": "^7.0.0"
   }
 }
