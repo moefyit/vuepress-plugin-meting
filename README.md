@@ -36,9 +36,9 @@ module.exports = {
          metingApi,
          meting,
          aplayer,
-         mobile
-      }
-   ]
+         mobile,
+      },
+   ],
 }
 ```
 
@@ -225,13 +225,13 @@ module.exports = {
          meting: {
             server: 'netease',
             type: 'playlist',
-            mid: '2539599584'
+            mid: '2539599584',
          }, // 不配置该项的话不会出现全局播放器
          aplayer: {
-            lrcType: 3
-         }
-      }
-   ]
+            lrcType: 3,
+         },
+      },
+   ],
 }
 ```
 

@@ -6,7 +6,7 @@ module.exports = (options = {}, context) => ({
       metingApi = 'https://api.i-meto.com/meting/api',
       meting = {},
       aplayer = {},
-      mobile = {}
+      mobile = {},
     } = options
 
     const { auto = '', server = '', type = '', mid = '' } = meting
@@ -25,7 +25,7 @@ module.exports = (options = {}, context) => ({
       lrcType = 0,
       listFolded = false,
       listMaxHeight = 250,
-      storageName = 'vuepress-plugin-meting'
+      storageName = 'vuepress-plugin-meting',
     } = aplayer
 
     const { cover = true, lrc = true } = mobile
@@ -36,7 +36,7 @@ module.exports = (options = {}, context) => ({
         auto,
         server,
         type,
-        mid
+        mid,
       },
       APLAYER_OPTIONS: {
         additionalAudios,
@@ -52,16 +52,15 @@ module.exports = (options = {}, context) => ({
         lrcType,
         listFolded,
         listMaxHeight,
-        storageName
+        storageName,
       },
       MOBILE_OPTIONS: {
         cover,
-        lrc
-      }
+        lrc,
+      },
     }
   },
 
   enhanceAppFiles: resolve(__dirname, './bin/enhanceAppFile.js'),
-  globalUIComponents:
-    options.meting !== undefined ? ['MetingGlobal'] : undefined
+  globalUIComponents: options.meting !== undefined ? ['MetingGlobal'] : undefined,
 })

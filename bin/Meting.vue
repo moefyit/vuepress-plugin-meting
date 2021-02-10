@@ -25,103 +25,103 @@ export default {
     auto: {
       required: false,
       type: String,
-      default: ''
+      default: '',
     },
     server: {
       required: false,
       type: String,
-      default: ''
+      default: '',
     },
     type: {
       required: false,
       type: String,
-      default: ''
+      default: '',
     },
     mid: {
       required: false,
       type: String,
-      default: ''
+      default: '',
     },
     additionalAudios: {
       required: false,
       type: Array,
-      default: () => []
+      default: () => [],
     },
     fixed: {
       required: false,
       type: Boolean,
-      default: false
+      default: false,
     },
     mini: {
       required: false,
       type: Boolean,
-      default: null
+      default: null,
     },
     autoplay: {
       required: false,
       type: Boolean,
-      default: false
+      default: false,
     },
     theme: {
       required: false,
       type: String,
-      default: '#b7daff'
+      default: '#b7daff',
     },
     loop: {
       required: false,
       type: String,
-      default: 'all'
+      default: 'all',
     },
     order: {
       required: false,
       type: String,
-      default: 'list'
+      default: 'list',
     },
     preload: {
       required: false,
       type: String,
-      default: 'auto'
+      default: 'auto',
     },
     volume: {
       required: false,
       type: Number,
-      default: 0.7
+      default: 0.7,
     },
     customAudioType: {
       required: false,
       type: Object,
-      default: undefined
+      default: undefined,
     },
     mutex: {
       required: false,
       type: Boolean,
-      default: true
+      default: true,
     },
     lrcType: {
       required: false,
       type: Number,
-      default: 0
+      default: 0,
     },
     listFolded: {
       required: false,
       type: Boolean,
-      default: false
+      default: false,
     },
     listMaxHeight: {
       required: false,
       type: Number,
-      default: 250
+      default: 250,
     },
     storageName: {
       required: false,
       type: String,
-      default: 'vuepress-plugin-meting'
-    }
+      default: 'vuepress-plugin-meting',
+    },
   },
   data() {
     return {
       metingApi: METING_API,
-      audio: []
+      audio: [],
     }
   },
 
@@ -132,24 +132,22 @@ export default {
       server: this.server,
       type: this.type,
       id: this.mid,
-      r: Math.random()
+      r: Math.random(),
     }
 
     let url = this.metingApi
     let paramsArray = []
-    Object.keys(params).forEach(key =>
-      paramsArray.push(key + '=' + params[key])
-    )
+    Object.keys(params).forEach((key) => paramsArray.push(key + '=' + params[key]))
     url += '?' + paramsArray.join('&')
 
     fetch(url, {
       headers: {
-        referer: null
-      }
+        referer: null,
+      },
     })
-      .then(res => res.json())
-      .then(result => {
-        const res = result.map(obj => {
+      .then((res) => res.json())
+      .then((result) => {
+        const res = result.map((obj) => {
           const rObj = {}
           rObj.name = obj.title
           rObj.artist = obj.author
@@ -178,7 +176,7 @@ export default {
         ['xiami.com.*song/(\\w+)', 'xiami', 'song'],
         ['xiami.com.*album/(\\w+)', 'xiami', 'album'],
         ['xiami.com.*artist/(\\w+)', 'xiami', 'artist'],
-        ['xiami.com.*collect/(\\w+)', 'xiami', 'playlist']
+        ['xiami.com.*collect/(\\w+)', 'xiami', 'playlist'],
       ]
 
       for (let rule of rules) {
@@ -191,7 +189,7 @@ export default {
           return
         }
       }
-    }
-  }
+    },
+  },
 }
 </script>

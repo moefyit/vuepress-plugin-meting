@@ -31,7 +31,7 @@ export default {
   data() {
     return {
       ...METING_OPTIONS,
-      ...APLAYER_OPTIONS
+      ...APLAYER_OPTIONS,
     }
   },
 
@@ -52,7 +52,7 @@ export default {
 
       function hide_mini_player() {
         if (!MOBILE_OPTIONS.cover) {
-          body.childNodes.forEach(child => {
+          body.childNodes.forEach((child) => {
             child.style.display = 'none'
           })
           body.style.background = 'transparent'
@@ -67,7 +67,7 @@ export default {
 
       function show_mini_player() {
         if (!MOBILE_OPTIONS.cover) {
-          body.childNodes.forEach(child => {
+          body.childNodes.forEach((child) => {
             child.style.display = 'block'
           })
           body.style.background = 'white'
@@ -84,7 +84,7 @@ export default {
       btn.onclick = () => {
         isShow ? hide_mini_player() : show_mini_player()
       }
-    }
-  }
+    },
+  },
 }
 </script>
