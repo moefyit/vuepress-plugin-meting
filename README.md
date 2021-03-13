@@ -66,7 +66,7 @@ Options 分为 `metingApi`、`meting`、`aplayer`、`mobile` 四部分
    -  类型：`string`
    -  默认值： `undefined`
    -  描述：MetingApi 中的 `server` 参数，即音乐平台
-   -  可选值： `"netease" | "tencent" | "xiami"`
+   -  可选值： `"netease" | "tencent" | "xiami" | "kugou" | "baidu"`
 
 -  type
 
@@ -84,7 +84,7 @@ Options 分为 `metingApi`、`meting`、`aplayer`、`mobile` 四部分
 -  auto
    -  类型：`string`
    -  默认值：`""`
-   -  描述：资源 `url`，填写后可通过资源 `url` 自动解析资源平台、类型、ID，上述三个选项将被覆盖
+   -  描述：资源 `url`，填写后可通过资源 `url` 自动解析资源平台、类型、ID，上述三个选项将被覆盖（本参数仅支持 `netease`、`tencent`、`xiami` 三平台）
 
 该 Option 可分别填写 `server`、`type`、`mid`
 
@@ -221,7 +221,8 @@ module.exports = {
    plugins: [
       'meting',
       {
-         metingApi: 'https://meting.sigure.xyz/api/music',
+         // 这个 API 是不可用的，只是作为示例而已
+         metingApi: 'https://meting.example.com/api/',
          meting: {
             server: 'netease',
             type: 'playlist',
