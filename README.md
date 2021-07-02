@@ -66,7 +66,7 @@ Options 分为 `metingApi`、`meting`、`aplayer`、`mobile` 四部分
    -  类型：`string`
    -  默认值： `undefined`
    -  描述：MetingApi 中的 `server` 参数，即音乐平台
-   -  可选值： `"netease" | "tencent" | "xiami" | "kugou" | "baidu"`
+   -  可选值： `"netease" | "tencent" | "kuwo" | "kugou" | "baidu"`
 
 -  type
 
