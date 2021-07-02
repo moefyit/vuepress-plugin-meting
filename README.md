@@ -15,7 +15,7 @@
 
 <Meting server="netease"
         type="playlist"
-        mid="2539599584"
+        mid="6838211960"
         :lrc-type="3"/>
 
 ## Install
@@ -92,7 +92,7 @@ Options 分为 `metingApi`、`meting`、`aplayer`、`mobile` 四部分
 meting: {
   server: "netease",
   type: "playlist",
-  mid: "2539599584",
+  mid: "6838211960",
 }
 ```
 
@@ -100,7 +100,7 @@ meting: {
 
 ```javascript
 meting: {
-   auto: 'https://music.163.com/#/playlist?id=2539599584'
+   auto: 'https://music.163.com/#/playlist?id=6838211960'
 }
 ```
 
@@ -226,7 +226,7 @@ module.exports = {
          meting: {
             server: 'netease',
             type: 'playlist',
-            mid: '2539599584',
+            mid: '6838211960',
          }, // 不配置该项的话不会出现全局播放器
          aplayer: {
             lrcType: 3,
@@ -241,7 +241,7 @@ module.exports = {
 
 <Meting server="netease"
         type="playlist"
-        mid="2539599584"
+        mid="6838211960"
         :lrc-type="3"/>
 
 <!-- 这样就可以在 about.html 页面单独引入一个播放器咯～ -->
