@@ -147,15 +147,14 @@ export default {
     })
       .then((res) => res.json())
       .then((result) => {
-        const res = result.map((obj) => {
-          const rObj = {}
-          rObj.name = obj.title
-          rObj.artist = obj.author
-          rObj.url = obj.url
-          rObj.cover = obj.pic
-          rObj.lrc = obj.lrc
-          return rObj
-        })
+        const res = result.map((obj) => ({
+          name: obj.name || obj.title || 'Audio name',
+          artist: obj.artist || obj.author || 'Audio artist',
+          url: obj.url,
+          cover: obj.cover || obj.pic,
+          lrc: obj.lrc || obj.lyric || '',
+          type: obj.type || 'auto',
+        }))
         this.audio = res.concat(this.additionalAudios)
       })
   },
