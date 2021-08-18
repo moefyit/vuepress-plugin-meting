@@ -126,13 +126,20 @@ export default {
   },
 
   mounted() {
-    if (this.auto) this._parse_link()
-
-    const params = {
-      server: this.server,
-      type: this.type,
-      id: this.mid,
-      r: Math.random(),
+    let params
+    if (this.auto) {
+      const parsed_params = this.parse_link(this.auto)
+      params = {
+        ...parsed_params,
+        r: Math.random(),
+      }
+    } else {
+      params = {
+        server: this.server,
+        type: this.type,
+        id: this.mid,
+        r: Math.random(),
+      }
     }
 
     let url = this.metingApi
@@ -160,7 +167,7 @@ export default {
   },
 
   methods: {
-    _parse_link() {
+    parse_link(link) {
       let rules = [
         ['music.163.com.*song.*id=(\\d+)', 'netease', 'song'],
         ['music.163.com.*album.*id=(\\d+)', 'netease', 'album'],
@@ -180,13 +187,20 @@ export default {
 
       for (let rule of rules) {
         let patt = new RegExp(rule[0])
-        let res = patt.exec(this.auto)
+        let res = patt.exec(link)
         if (res !== null) {
-          this.server = rule[1]
-          this.type = rule[2]
-          this.mid = res[1]
-          return
+          return {
+            server: rule[1],
+            type: rule[2],
+            id: res[1],
+          }
         }
+      }
+      console.error(`无法解析的链接: ${link}，请检查链接是否书写正确`)
+      return {
+        server: '',
+        type: '',
+        id: '',
       }
     },
   },
