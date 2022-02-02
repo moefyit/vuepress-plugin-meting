@@ -11,7 +11,7 @@
 </p>
 
 -  Document: [moefy-vuepress](https://moefyit.github.io/moefy-vuepress/)
--  LiveDemo: [notev](https://nyakku.moe/)
+-  Live demo: [notev](https://nyakku.moe/)
 
 <Meting server="netease"
         type="playlist"
