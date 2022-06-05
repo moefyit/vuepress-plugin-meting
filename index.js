@@ -7,6 +7,7 @@ module.exports = (options = {}, context) => ({
       meting = {},
       aplayer = {},
       mobile = {},
+      defaultCover = 'https://github.com/SigureMo.png',
     } = options
 
     const { auto = '', server = '', type = '', mid = '' } = meting
@@ -31,14 +32,14 @@ module.exports = (options = {}, context) => ({
     const { cover = true, lrc = true } = mobile
 
     return {
-      METING_API: metingApi,
-      METING_OPTIONS: {
+      __METING_API__: metingApi,
+      __METING_OPTIONS__: {
         auto,
         server,
         type,
         mid,
       },
-      APLAYER_OPTIONS: {
+      __APLAYER_OPTIONS__: {
         additionalAudios,
         mini,
         autoplay,
@@ -54,10 +55,11 @@ module.exports = (options = {}, context) => ({
         listMaxHeight,
         storageName,
       },
-      MOBILE_OPTIONS: {
+      __MOBILE_OPTIONS__: {
         cover,
         lrc,
       },
+      __DEFAULT_COVER__: defaultCover,
     }
   },
 

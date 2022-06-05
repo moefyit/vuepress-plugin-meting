@@ -30,8 +30,8 @@ export default {
 
   data() {
     return {
-      ...METING_OPTIONS,
-      ...APLAYER_OPTIONS,
+      ...__METING_OPTIONS__,
+      ...__APLAYER_OPTIONS__,
     }
   },
 
@@ -51,7 +51,7 @@ export default {
       let isShow = false
 
       function hide_mini_player() {
-        if (!MOBILE_OPTIONS.cover) {
+        if (!__MOBILE_OPTIONS.cover) {
           body.childNodes.forEach((child) => {
             child.style.display = 'none'
           })
@@ -59,21 +59,21 @@ export default {
           btn.style.display = 'block'
           btn.style.right = 'auto'
         }
-        if (!MOBILE_OPTIONS.lrc) {
+        if (!__MOBILE_OPTIONS__.lrc) {
           lrc.style.display = 'none'
         }
         isShow = false
       }
 
       function show_mini_player() {
-        if (!MOBILE_OPTIONS.cover) {
+        if (!__MOBILE_OPTIONS__.cover) {
           body.childNodes.forEach((child) => {
             child.style.display = 'block'
           })
           body.style.background = 'white'
           btn.style.right = '0'
         }
-        if (!MOBILE_OPTIONS.lrc) {
+        if (!__MOBILE_OPTIONS__.lrc) {
           lrc.style.display = 'block'
         }
         isShow = true

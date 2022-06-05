@@ -37,6 +37,7 @@ module.exports = {
          meting,
          aplayer,
          mobile,
+         defaultCover,
       },
    ],
 }
@@ -51,7 +52,7 @@ module.exports = {
 
 ## Options
 
-Options 分为 `metingApi`、`meting`、`aplayer`、`mobile` 四部分
+Options 分为 `metingApi`、`meting`、`aplayer`、`mobile`、`defaultCover` 五部分
 
 ### metingApi
 
@@ -213,6 +214,10 @@ meting: {
    -  默认值： `true`
    -  描述：是否显示歌词
 
+### defaultCover
+
+加载音乐封面时所显示的默认封面图
+
 ## Examples
 
 ```javascript
@@ -231,6 +236,7 @@ module.exports = {
          aplayer: {
             lrcType: 3,
          },
+         defaultCover: 'https://nyakku.moe/avatar.jpg',
       },
    ],
 }

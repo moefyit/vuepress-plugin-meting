@@ -26,6 +26,6 @@
   },
   "homepage": "https://github.com/moefyit/vuepress-plugin-meting#readme",
   "dependencies": {
-    "@moefe/vue-aplayer": "^2.0.0-beta.5"
+    "@moefe/vue-aplayer": "2.0.0-beta.5"
   }
 }

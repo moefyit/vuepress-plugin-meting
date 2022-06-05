@@ -120,7 +120,7 @@ export default {
   },
   data() {
     return {
-      metingApi: METING_API,
+      metingApi: __METING_API__,
       audio: [],
     }
   },
