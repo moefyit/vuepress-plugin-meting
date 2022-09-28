@@ -51,7 +51,7 @@ export default {
       let isShow = false
 
       function hide_mini_player() {
-        if (!__MOBILE_OPTIONS.cover) {
+        if (!__MOBILE_OPTIONS__.cover) {
           body.childNodes.forEach((child) => {
             child.style.display = 'none'
           })
